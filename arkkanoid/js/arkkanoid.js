@@ -39,7 +39,7 @@ var finalTime = 0;
 var lose = false;
 
 //разместить блоки
-allignBlocks(45);
+allignBlocks(72);
 
 //Добавить на канву картинки (повторять)
 function paint(){
@@ -69,16 +69,16 @@ function Block(x, y, width, height){
 
 //первоначальное расположение блоков
 function allignBlocks(blocksNumber){
-		var currentPosX = 4;
-		var currentPosY = 4;
+		var currentPosX = 16;
+		var currentPosY = 3;
 		for(var i = 0; i < blocksNumber; i++){
 			var block = new Block(currentPosX, currentPosY, blockWidth, blockHeight);
 			blocks.push(block);
 			if(currentPosX + 2*blockWidth < canvas.width){
-				currentPosX = currentPosX + blockWidth + 4;	
+				currentPosX = currentPosX + blockWidth + 1;	
 			}else{
-				currentPosY = currentPosY + blockHeight+4;
-				currentPosX = 4;
+				currentPosY = currentPosY + blockHeight+1;
+				currentPosX = 16;
 		}
 
 	}
@@ -166,7 +166,7 @@ function checkVerticalCollision(){
 
 function checkHorizontalCollision(){
 	for(var i = 0 ; i < blocks.length; i++){  	 
-		 if(checkLREdge(posX+changeX , blocks[i].x, blocks[i].width) && (posY+changeY  >= blocks[i].x) && (posY+changeY  <= blocks[i].y+blocks[i].height)){
+		 if(checkLREdge(posX+changeX , blocks[i].x, blocks[i].width) && (posY+changeY  >= blocks[i].y) && (posY+changeY  <= blocks[i].y+blocks[i].height)){
 		  	changeX = -changeX;
 		  	blocks.splice(i,1);
 	  	}
