@@ -30,7 +30,7 @@ var stickX = canvas.width/2-30;
 var stickY = canvas.height-30;
 var stickWidth = 60;
 var stickHeight = 10;
-var blockWidth = 51;
+var blockWidth = 50;
 var blockHeight = 20;
 
 //время запуска приложения
@@ -174,8 +174,8 @@ function checkHorizontalCollision(){
 }
 
 function checkUpDownEdge(curY, y, height){
-	if(((curY >= y) && (curY <= y+height/12)) ||
-	((curY <= y+height) && (curY >= y+height-height/12))){
+	if(((curY >= y) && (curY <= y+height/5)) ||
+	((curY <= y+height) && (curY >= y+height-height/5))){
 		return true;
 	}else{
 		return false;
@@ -183,8 +183,8 @@ function checkUpDownEdge(curY, y, height){
 }
 
 function checkLREdge(curX, x, width){
-	if(((curX >= x) && (curX <= x+width/12)) ||
-	((curX <= x+width) && (curX >= x+width-width/12))){
+	if(((curX >= x) && (curX <= x+width/9)) ||
+	((curX <= x+width) && (curX >= x+width-width/9))){
 		return true;
 	}else{
 		return false;
